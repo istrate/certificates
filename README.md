@@ -33,4 +33,4 @@ Doing so, the client certificate may be installed in most browsers.
 
 Note: clientCert.pem can also be created using
      
-	  ```cat clientCert.key clientCert.csr > clientCert.pem```
+cat clientCert.key clientCert.csr > clientCert.pem
