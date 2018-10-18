@@ -1,8 +1,8 @@
-# certificates
+# Guide to generate self-signed certificates
 
-Self-signed client-side SSL
+Self-signed server and client-side SSL
 
-Create a Certificate Authority root (which represents the server)
+1) Create a Certificate Authority root (which represents the server)
 
 Generate serverCA.key and serverCA.crt certificate using:
 
@@ -14,14 +14,14 @@ Note: If you need to provide a passphrase then add "-des3" flag on above command
 
 For the server certificate you'll be requested to provide Organization & Common Name. The information provided can be any human identifiers for this server CA.
 
-Create the Client Key and CSR
+2) Create the Client Key and CSR
 
 Organization & Common Name should be the client specific indentifiers 
 
 ```openssl genrsa -out clientCert.key 4096```
 ```openssl req -new -key clientCert.key -out clientCert.csr```
 
-Genetarate the self-signed client certificate
+Generate the self-signed client certificate
 
 ```openssl x509 -req -in clientCert.csr -CA serverCA.pem -CAkey serverCA.key -CAcreateserial -out clientCert.pem -days 500 -sha256```
 
