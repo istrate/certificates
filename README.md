@@ -34,3 +34,19 @@ Doing so, the client certificate may be installed in most browsers.
 Note: clientCert.pem can also be created using
      
 ```cat clientCert.key clientCert.csr > clientCert.pem```
+
+Procedure to generate server certificate with passphrase and convert to .pem
+
+Step 1: Generate a Private Key 
+```openssl genrsa -des3 -out server.key 1024```
+or
+```openssl genrsa -des3 -out server.key 2048```
+
+Step 2: Generate a CSR (Certificate Signing Request) 
+```openssl req -new -key server.key -sha256  -out server.csr```
+
+Step 3: Generating a Self-Signed Certificate 
+```openssl x509 -req -days 365 -in server.csr -signkey server.key -sha256 -out server.crt```
+
+Step 4: Convert the CRT to PEM format
+```openssl x509 -in server.crt -out server.pem -outform PEM```
