@@ -1,6 +1,6 @@
 # Guide to generate self-signed certificates
 
-Self-signed server and client-side SSL
+# Self-signed server and client-side SSL
 
 1) Create a Certificate Authority root (which represents the server)
 
@@ -35,7 +35,7 @@ Note: clientCert.pem can also be created using
      
 ```cat clientCert.key clientCert.csr > clientCert.pem```
 
-Procedure to generate server certificate with passphrase and convert to .pem
+# Procedure to generate server certificate with passphrase and convert to .pem
 
 Step 1: Generate a Private Key 
 
