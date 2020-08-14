@@ -19,6 +19,7 @@ For the server certificate you'll be requested to provide Organization & Common 
 Organization & Common Name should be the client specific indentifiers 
 
 ```openssl genrsa -out clientCert.key 4096```
+
 ```openssl req -new -key clientCert.key -out clientCert.csr```
 
 Generate the self-signed client certificate
@@ -29,7 +30,7 @@ Convert Client Key to PKCS
 
 Doing so, the client certificate may be installed in most browsers.
 
-```openssl pkcs12 -export -clcerts -in clientCert.pem -inkey client.key -out clientCert.p12```
+```openssl pkcs12 -export -clcerts -in clientCert.pem -inkey clientCert.key -out clientCert.p12```
 
 Note: clientCert.pem can also be created using
      
