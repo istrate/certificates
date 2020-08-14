@@ -30,7 +30,7 @@ Convert Client Key to PKCS
 
 Doing so, the client certificate may be installed in most browsers.
 
-```openssl pkcs12 -export -clcerts -in clientCert.pem -inkey clientCert.key -out clientCert.p12```
+```openssl pkcs12 -export -clcerts -in clientCert.pem -inkey clientCert.key -out clientCert.p12 -password pass:```
 
 Note: clientCert.pem can also be created using
      
